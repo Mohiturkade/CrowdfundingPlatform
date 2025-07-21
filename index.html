@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kindraiser</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="assets/kindraiserLogo.png" alt="Kindraiser Logo" />
+      <h1>Kindraiser</h1>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="explore.html">Campaigns</a>
+      <a href="how-it-works.html">How it Works</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="auth-buttons">
+      <button onclick="window.location.href='login.html'" class="btn-outline">Login</button>
+      <button onclick="window.location.href='register.html'" class="btn-filled">Register</button>
+    </div>
+  </nav>
+
+  <section class="hero-section-top">
+    <div class="hero-section-top-left">
+      <div><img src="assets/your_cause.webp" alt="Your Cause Icon" /></div>
+      <div><img src="assets/medical.webp" alt="Medical Help Icon" /></div>
+      <div><img src="assets/emergency.webp" alt="Emergency Icon" /></div>
+    </div>
+
+    <div class="hero-section-top-center">
+      <h2>Fundraising with <span style="color: #4CAF50;">Kindraiser</span></h2>
+      <p>Start a fundraiser for yourself, a loved one, or a community cause.</p>
+      <button onclick="location.href='dashboard.html'">Start a Fundraiser</button>
+      <button>Learn More</button>
+    </div>
+
+    <div class="hero-section-top-right">
+      <div><img src="assets/education.webp" alt="Education Fund Icon" /></div>
+      <div><img src="assets/emergency.webp" alt="Emergency Relief Icon" /></div>
+      <div><img src="assets/animal.webp" alt="Animal Icon" /></div>
+    </div>
+  </section>
+
+  <section class="features-section">
+    <h2>Why Choose Kindraiser?</h2>
+    <div class="features-grid">
+      <div class="feature">
+        <h3>Zero Platform Fee</h3>
+        <p>All donations go directly to the cause—no hidden charges.</p>
+      </div>
+      <div class="feature">
+        <h3>Secure Payments</h3>
+        <p>Donor payments are 100% secure and encrypted.</p>
+      </div>
+      <div class="feature">
+        <h3>24x7 Support</h3>
+        <p>We’re with you throughout your fundraising journey.</p>
+      </div>
+      <div class="feature">
+        <h3>Global Donors</h3>
+        <p>Reach people who care from around the world.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="categories-section">
+    <h2>Popular Fundraising Categories</h2>
+    <div id="categoriesContainer" class="categories-grid"></div>
+  </section>
+
+  <section class="stories-section">
+    <h2>Success Stories</h2>
+    <div class="stories-grid">
+      <div class="story">
+        <h3>💙 Aisha’s Heart Surgery</h3>
+        <p>Over ₹15 Lakhs raised for a critical heart operation. Aisha is now recovering and smiling.</p>
+      </div>
+      <div class="story">
+        <h3>📘 Rahul’s Dream College</h3>
+        <p>Kindraiser donors helped Rahul join IIT Bombay with full tuition covered.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Ready to Make a Difference?</h2>
+    <p>Start your fundraiser today and change a life.</p>
+    <button onclick="location.href='dashboard.html'">Start a Fundraiser</button>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Kindraiser. All Rights Reserved.</p>
+    <p><a href="about.html">About</a> | <a href="explore.html">Explore</a> | <a href="#">Privacy Policy</a></p>
+  </footer>
+
+  <script type="module" src="js/index.js"></script>
+</body>
+</html>
+
+
+

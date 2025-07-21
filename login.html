@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Kindraiser</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .message {
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 0.95rem;
+      border-radius: 6px;
+      display: none;
+    }
+
+    .message.success {
+      background-color: #e6f4ea;
+      color: #2e7d32;
+      border: 1px solid #2e7d32;
+    }
+
+    .message.error {
+      background-color: #fdecea;
+      color: #c62828;
+      border: 1px solid #c62828;
+    }
+
+    .auth-container {
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+      margin: auto;
+      margin-top: 10vh;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .auth-container h2 {
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 20px;
+      color: #2e7d32;
+    }
+
+    .auth-container input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .auth-container button {
+      width: 100%;
+      padding: 12px;
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .auth-container button:hover {
+      background-color: #256d28;
+    }
+
+    .auth-container p {
+      margin-top: 20px;
+      font-size: 0.95rem;
+    }
+
+    .auth-container a {
+      color: #2e7d32;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .auth-container a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="auth-container">
+    <h2>Login</h2>
+
+    <!-- ✅ Message box -->
+    <div id="messageBox" class="message"></div>
+
+    <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Password" />
+    <button id="loginBtn">Login</button>
+    <p>Don't have an account? <a href="register.html">Register here</a></p>
+  </div>
+
+  <script type="module">
+    import { auth } from './firebase/firebase-config.js';
+    import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+    function showMessage(message, type = 'success') {
+      const box = document.getElementById("messageBox");
+      box.textContent = message;
+      box.className = `message ${type}`;
+      box.style.display = "block";
+    }
+
+    async function loginUser() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+        showMessage("Login successful!", "success");
+        setTimeout(() => {
+          window.location.href = "dashboard.html";
+        }, 1500);
+      } catch (err) {
+        showMessage("Login failed: " + err.message, "error");
+      }
+    }
+
+    document.getElementById("loginBtn").addEventListener("click", loginUser);
+  </script>
+</body>
+</html>
+
